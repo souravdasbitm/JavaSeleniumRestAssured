@@ -6,7 +6,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 
 public class DriverManager {
-    private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+    private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
     private DriverManager() {
         // Private constructor to prevent instantiation
