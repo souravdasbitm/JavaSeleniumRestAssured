@@ -6,6 +6,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 
 public class DriverManager {
+
     private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
     private DriverManager() {
