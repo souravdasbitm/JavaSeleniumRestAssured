@@ -13,6 +13,7 @@
         <selenium-version>4.16.1</selenium-version>
         <testng-version>7.9.0</testng-version>
         <cucumber-version>7.15.0</cucumber-version>
+        <sonarscanner-version>3.10.0.2594</sonarscanner-version>
     </properties>
     <dependencies>
         <dependency>
@@ -36,4 +37,15 @@
             <version>${cucumber-version}</version>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <!-- Other plugins... -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>${sonarscanner-version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
