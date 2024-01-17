@@ -16,14 +16,12 @@ public class PropertyUtils {
         try {
             reader = new BufferedReader(new FileReader(filePath));
         } catch (FileNotFoundException e1) {
-            e1.printStackTrace();
             throw new FileNotFoundException("Properties file not found at: " + filePath);
         }
         try {
             properties.load(reader);
             reader.close();
         } catch (IOException e) {
-            e.printStackTrace();
             throw new PropertyLoadException("Failed to load the Properties file: " + filePath);
         }
         return properties;
