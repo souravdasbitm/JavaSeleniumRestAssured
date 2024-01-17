@@ -8,6 +8,7 @@ import java.util.Properties;
 /*
 Singleton Config File Reader
 */
+@SuppressWarnings("java:S6548")
 public class ConfigFileReader {
     private static final String RESOURCES_PATH = System.getProperty("user.dir") + "/src/test/resources/configs";
 
