@@ -5,11 +5,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
 
-public class DriverManager {
+public class BrowserManager {
 
     private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
-    private DriverManager() {
+    private BrowserManager() {
         // Private constructor to prevent instantiation
     }
 

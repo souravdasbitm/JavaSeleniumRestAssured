@@ -35,6 +35,5 @@
             <artifactId>cucumber-testng</artifactId>
             <version>${cucumber-version}</version>
         </dependency>
-
     </dependencies>
 </project>
