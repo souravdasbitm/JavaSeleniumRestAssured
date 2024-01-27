@@ -1,12 +1,14 @@
 package pagefactory;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class HomePage extends BasePage {
 
-    // Element
-    private final By alertsLink = By.linkText("Alerts & Modals");
-    private final By tableLink = By.linkText("Table");
+    private WebElement getLinkWithDynamicText(String dynamicText) {
+        String menuXpath = "//a[normalize-space(text())='" + dynamicText + "']";
+        return driver.findElement(By.xpath(menuXpath));
+    }
 
     public HomePage() {
         super();
@@ -14,15 +16,6 @@ public class HomePage extends BasePage {
 
     //action
     public void clickOneMenu(String menu) {
-        switch (menu.toLowerCase()) {
-            case "table":
-                customDriverWait.waitForElementClickable(driver.findElement(tableLink)).click();
-                break;
-            case "alert":
-                customDriverWait.waitForElementClickable(driver.findElement(alertsLink)).click();
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid menu " + menu);
-        }
+        doClick(getLinkWithDynamicText(menu));
     }
 }

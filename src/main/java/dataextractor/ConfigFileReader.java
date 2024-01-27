@@ -10,7 +10,7 @@ Singleton Config File Reader
 */
 @SuppressWarnings("java:S6548")
 public class ConfigFileReader {
-    private static final String RESOURCES_PATH = System.getProperty("user.dir") + "/src/test/resources/configs";
+    private static final String RESOURCES_PATH = System.getProperty("user.dir") + "/src/test/resources/configs/";
 
 
     //Environment
@@ -28,9 +28,14 @@ public class ConfigFileReader {
      * This will check for the env value from Jenkins/Maven first. If it does not
      * get any input from Jenkins/mvn cmd line, then, will take
      * maven command mvn clean install -Denv=staging
+     * IF running from local without mvn command the if logic is placed
+     * default is staging
      */
+    String env = (System.getProperty("env") != null)
+            ? System.getProperty("env")
+            : "staging";
     private ConfigFileReader() throws FileNotFoundException {
-        switch (System.getProperty("env").toLowerCase()) {
+        switch (env.toLowerCase()) {
             case ("staging"):
                 properties = getConfigPropertyFile(STG_CONFIG_PROPERTIES);
                 break;
@@ -74,4 +79,11 @@ public class ConfigFileReader {
     public String getApiUrl() {
         return getPropertyValue("API_URL");
     }
+    public String getBrowserProperty(){
+        return getPropertyValue("headless");
+    }
+
+
 }
+
+

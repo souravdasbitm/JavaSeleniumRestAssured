@@ -1,8 +1,12 @@
 package manager;
 
+import dataextractor.ConfigFileReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+
+import java.io.FileNotFoundException;
 
 
 public class BrowserManager {
@@ -20,12 +24,16 @@ public class BrowserManager {
         return driverThreadLocal.get();
     }
 
-    public static void initializeDriver(String browserType) {
+    public static void initializeDriver(String browserType) throws FileNotFoundException {
         WebDriver driver;
         switch (browserType.toLowerCase()) {
             case "chrome":
                 //declare the chrome Options
-                driver = new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                if(ConfigFileReader.getInstance().getBrowserProperty().equalsIgnoreCase("true")) {
+                    options.addArguments("--headless");
+                }
+                driver = new ChromeDriver(options);
                 break;
             case "edge":
                 driver = new EdgeDriver();

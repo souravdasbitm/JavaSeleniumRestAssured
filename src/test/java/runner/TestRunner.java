@@ -1,11 +1,30 @@
 package runner;
 
+
+import dataextractor.SharedDataHolder;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
-import org.testng.annotations.BeforeClass;
+import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
+
+
+@CucumberOptions(
+        tags = "@regression",
+        features = "src/test/resources/features/",
+        glue = "stepDefinition",
+        plugin = {
+                "pretty",
+                "json:target/cucumber.json"
+        },
+        monochrome = true
+)
 
 public class TestRunner extends AbstractTestNGCucumberTests {
-    @BeforeClass
-    public void setUp(){
-
-    }
+        @BeforeTest
+        @Parameters({"browser"})
+        public void setTestNgParameters(@Optional String browser){
+                SharedDataHolder.setBrowserType(browser);
+        }
 }
