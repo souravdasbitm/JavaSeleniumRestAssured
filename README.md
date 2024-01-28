@@ -17,3 +17,5 @@ Integrated with https://sonarcloud.io/ for code smells
 
     b.Run the testng.xml file.
 
+Supported Browser Edge and Chrome ( can be extended to other browser supported in selenium)
+
