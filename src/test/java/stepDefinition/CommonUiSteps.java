@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class CommonSteps {
+public class CommonUiSteps {
     @When("User clicks onto the {string}")
     public void user_clicks_onto_the(String string) {
         new HomePage().clickOneMenu(string);
