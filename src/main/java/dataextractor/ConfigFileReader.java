@@ -34,6 +34,7 @@ public class ConfigFileReader {
     String env = (System.getProperty("env") != null)
             ? System.getProperty("env")
             : "staging";
+
     private ConfigFileReader() throws FileNotFoundException {
         switch (env.toLowerCase()) {
             case ("staging"):
@@ -76,10 +77,12 @@ public class ConfigFileReader {
     public String getUiUrl() {
         return getPropertyValue("UI_URL");
     }
+
     public String getApiUrl() {
         return getPropertyValue("API_URL");
     }
-    public String getBrowserProperty(){
+
+    public String getBrowserProperty() {
         return getPropertyValue("headless");
     }
 

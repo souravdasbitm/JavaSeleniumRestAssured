@@ -3,7 +3,8 @@ package dataextractor;
 public class SharedDataHolder {
     private static ThreadLocal<String> browserTypeThreadLocal = new ThreadLocal<>();
 
-    private SharedDataHolder(){}
+    private SharedDataHolder() {
+    }
 
     public static String getBrowserType() {
         return browserTypeThreadLocal.get();
@@ -13,7 +14,7 @@ public class SharedDataHolder {
         browserTypeThreadLocal.set(browserType);
     }
 
-    public static void cleanBrowseType(){
+    public static void cleanBrowseType() {
         browserTypeThreadLocal.remove();
     }
 }

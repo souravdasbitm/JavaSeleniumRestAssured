@@ -9,7 +9,6 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 
-
 @CucumberOptions(
         tags = "@regression",
         features = "src/test/resources/features/",
@@ -22,9 +21,9 @@ import org.testng.annotations.Parameters;
 )
 
 public class TestRunner extends AbstractTestNGCucumberTests {
-        @BeforeTest
-        @Parameters({"browser"})
-        public void setTestNgParameters(@Optional String browser){
-                SharedDataHolder.setBrowserType(browser);
-        }
+    @BeforeTest
+    @Parameters({"browser"})
+    public void setTestNgParameters(@Optional String browser) {
+        SharedDataHolder.setBrowserType(browser);
+    }
 }

@@ -1,8 +1,8 @@
 @regression @Genpact
 Feature: This is the Check Box UI feature
 
-  Scenario: Count the number of status in task table
+  Scenario: Check the status of the check box
     When User clicks onto the "Input Forms"
     And User clicks onto the "Checkbox Demo"
-#    Then Validate the "" checkbox is "checked"
+    Then Validate the "Default Checked" checkbox is "checked"
 

@@ -9,7 +9,9 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertyUtils {
-    private PropertyUtils(){}
+    private PropertyUtils() {
+    }
+
     public static Properties propertyLoader(String filePath) throws FileNotFoundException {
         Properties properties = new Properties();
         BufferedReader reader;
