@@ -4,7 +4,7 @@ This is a framework which is integrated with Cucumber + Selenium + RestAssured (
 
 
 Integrated with https://sonarcloud.io/ for code smells
-![img.png](img.png)
+![img_1.png](SonarImg.png)
 
 **How to run**
 
