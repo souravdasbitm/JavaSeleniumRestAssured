@@ -2,9 +2,11 @@
 
 This is a framework which is integrated with Cucumber + Selenium + RestAssured (API) + Allure + TestNg
 
-Integrated with https://sonarcloud.io/ for code smells
 
-how to run
+Integrated with https://sonarcloud.io/ for code smells
+![img.png](img.png)
+
+**How to run**
 
 1. Using maven -> mvn clean test -Denv=<env>  i.e env = staging | qa | dev | preprod.
    Example command : mvn clean test -Denv=staging
