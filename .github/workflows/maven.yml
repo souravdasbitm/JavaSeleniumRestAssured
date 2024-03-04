@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Application Test Report
-          path: target/site/allure-maven-plugin/*.*
+          path: target/site/allure-maven-plugin
           retention-days: 30
 
 #      # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
