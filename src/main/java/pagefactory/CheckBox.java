@@ -24,6 +24,6 @@ public class CheckBox extends BasePage {
     //action
 
     public Boolean checkBoxStatus(String checkBoxElement){
-        return customDriverWait.waitForElementVisibility(checkBoxDynamicXpath(checkBoxElement)).isSelected();
+        return checkElementIsSelected(checkBoxDynamicXpath(checkBoxElement));
     }
 }

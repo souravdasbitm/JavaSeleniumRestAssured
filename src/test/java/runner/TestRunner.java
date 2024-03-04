@@ -15,7 +15,8 @@ import org.testng.annotations.Parameters;
         glue = "stepDefinition",
         plugin = {
                 "pretty",
-                "json:target/cucumber.json"
+                "json:target/cucumber.json",
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         },
         monochrome = true
 )
