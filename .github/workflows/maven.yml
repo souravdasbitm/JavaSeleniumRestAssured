@@ -29,7 +29,7 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn clean test -Denv=staging --file pom.xml
-      - name: Gernerate Allure Report
+      - name: Generate Allure Report
         run: mvn allure:report --file pom.xml
       - name: Publish Cucumber report
         uses: actions/upload-artifact@v2
